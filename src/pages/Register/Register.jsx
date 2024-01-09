@@ -1,5 +1,6 @@
 import {Form, Button, Modal} from 'react-bootstrap';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const url = "http://localhost:8080/class"
 
@@ -11,36 +12,48 @@ const Register = () => {
   const [date, setDate] = useState()
   const [hour, setHour] = useState()
 
+  const naviagte = useNavigate()
+
+
+  const request = async (url, method, data) => {
+
+    await fetch(url, {
+      method,
+        headers: {
+          "Content-type" : "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+
+
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
   
     const classes = {
       student, language, unit, date, hour
     }
-    
-    await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(classes)
-    })
 
+    request(url, "POST", classes)
+  
     setStudent("")
     setLanguage("")
     setUnit("")
     setDate("")
     setHour("")
     
-    
+    naviagte("/")
   }
 
   return (
     <Form onSubmit={handleSubmit}>
+      
       <Modal.Dialog className="w-50 ">
         <Modal.Header className='bg-dark text-white mb-4 p-2 rounded-bottom'>
           <h1 className="fs-3">Register class</h1>
         </Modal.Header>
+        <span className="text-center fs-5 text-secondary">Register the classes in your schedule</span>
         <Modal.Body>
           <Form.Group className='mb-4'>
             <Form.Label className="fs-6">Student</Form.Label>
@@ -51,8 +64,8 @@ const Register = () => {
             <Form.Label className="fs-6">Language</Form.Label>
             <Form.Select required name="language" onChange={(e) => setLanguage(e.target.value)}>
               <option>--Select the language--</option>
-              <option value="english">English</option>
-              <option value="german">German</option>
+              <option value="English">English</option>
+              <option value="German">German</option>
             </Form.Select>
           </Form.Group>
 
