@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styles from "./Header.module.css"
+import styles from "./Header.module.scss"
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
         <span className="fs-2">Class scheduling</span>
       </NavLink>
       <ul className={styles.ul}>
-          <li>
+          <li className={styles.links}>
             <NavLink to="/">
               Home
             </NavLink>
