@@ -1,0 +1,25 @@
+:root {
+  --fc-event-bg-color: #000000;
+  --fc-event-border-color: #000000;
+  
+}
+.home {
+  height: 80vh;
+  width: 90%;
+  margin: 0 auto;
+
+  h1 {
+    text-align: center;
+  }
+
+  a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+
+  table {
+    cursor: pointer;
+  }
+  
+}
+
