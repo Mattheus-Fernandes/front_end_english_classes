@@ -44,6 +44,8 @@ const Register = ({closeComponent}) => {
     setUnit("")
     setDate("")
     setHour("") 
+
+    window.location.reload()
   }
 
   return (
