@@ -7,29 +7,6 @@ const Header = () => {
       <NavLink to="/" className="text-decoration-none text-white">
         <span className="fs-2">Class scheduling</span>
       </NavLink>
-      <ul className={styles.ul}>
-          <li className={styles.links}>
-            <NavLink to="/">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/search/class">
-              Search class
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/edit/class">
-              Change
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/register/class">
-              Register
-            </NavLink>
-          </li>
-          
-      </ul>
    </nav>     
   )
 }
