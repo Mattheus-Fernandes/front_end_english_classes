@@ -1,4 +1,5 @@
 import {Card, Button} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const InfoStudent = ({student,language, unit, date, hour, deleteStudent, showComponentEdit}) => {
 
@@ -25,6 +26,7 @@ const InfoStudent = ({student,language, unit, date, hour, deleteStudent, showCom
         </Card.Text>
         <Button variant="warning" onClick={showComponentEdit} className='me-2'>Edit</Button>
         <Button variant="danger" onClick={deleteStudent}>Delete</Button>
+        <NavLink to="/" className="btn btn-dark position-absolute end-1">Home</NavLink>
         
       </Card.Body>
     </Card>
