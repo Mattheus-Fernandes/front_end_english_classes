@@ -1,6 +1,6 @@
 import {Card, Button} from 'react-bootstrap';
 
-const InfoStudent = ({student,language, unit, date, hour, tes, showComponentEdit}) => {
+const InfoStudent = ({student,language, unit, date, hour, deleteStudent, showComponentEdit}) => {
 
   return (
     <Card style={{ width: '50rem' }}>
@@ -24,7 +24,7 @@ const InfoStudent = ({student,language, unit, date, hour, tes, showComponentEdit
           <span>{hour}</span>
         </Card.Text>
         <Button variant="warning" onClick={showComponentEdit} className='me-2'>Edit</Button>
-        <Button variant="danger" onClick={tes}>Delete</Button>
+        <Button variant="danger" onClick={deleteStudent}>Delete</Button>
         
       </Card.Body>
     </Card>
