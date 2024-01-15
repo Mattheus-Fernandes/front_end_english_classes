@@ -40,8 +40,6 @@ const Home = () => {
 
    })
 
-   console.log(showClasses)
-
    const showComponentRegister = () => {
 
     setComponent(changeComponent[0].change)
