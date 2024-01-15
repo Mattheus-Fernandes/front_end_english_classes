@@ -40,6 +40,8 @@ const Home = () => {
 
    })
 
+   console.log(showClasses)
+
    const showComponentRegister = () => {
 
     setComponent(changeComponent[0].change)
@@ -53,7 +55,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
 
-      <button onClick={showComponentRegister} type="button" class="btn btn-dark">Register</button>
+      <button onClick={showComponentRegister} type="button" className="btn btn-dark">Register</button>
 
       <h1>Scheduled classes</h1>
 
@@ -67,7 +69,7 @@ const Home = () => {
         
         eventClick={function(e){
           
-          window.location.href = `http://localhost:3000/search/class/${e.event.title}`
+          window.location.href = `http://localhost:3000/search/class/${e.event.id}`
         }}
       />
 
